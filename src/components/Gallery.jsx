@@ -38,7 +38,7 @@ const galleryData = [
       "/galeria/marca/marca1.jpeg",
       "/galeria/marca/marca2.jpeg",
       "/galeria/marca/marca3.jpg",
-      "/galeria/marca/marca4.jpg",
+      "/galeria/marca/marca4.png",
     ],
   },
   {
