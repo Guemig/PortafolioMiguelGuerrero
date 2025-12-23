@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+
+/* ============================== */
+/*     ANIMACIÓN GRADIENTE        */
+/* ============================== */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 8s ease infinite;
+}
+
+
+/* ============================== */
+/*        NUBES / NEBLINA         */
+/* ============================== */
+
+.mist-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Neblina base */
+.mist {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+rgba(0, 102, 255, 0.9) 0%, rgb(255, 255, 255) 40%, rgb(14, 41, 91) 70%, rgb(76, 27, 255) 100%
+  );
+  filter: blur(150px);
+  opacity: 0.45;
+  pointer-events: none;
+  animation: cloudFloat 20s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+/* Capas */
+.mist1 {
+  top: -30%;
+  left: -30%;
+  animation-duration: 18s;
+}
+
+.mist2 {
+  bottom: -20%;
+  right: -20%;
+  animation-duration: 24s;
+}
+
+.mist3 {
+  top: 10%;
+  right: -10%;
+  animation-duration: 30s;
+}
+
+/* Movimiento */
+@keyframes cloudFloat {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(120px, -60px);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+}
+
+.social-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: #1d4ed8; /* azul Tailwind 700 */
+  transform: scale(1.1);
+}
+
+
+/* Fondo animado más suave y visible */
+@keyframes gradientSlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-slow {
+  background-size: 300% 300%;
+  animation: gradientSlow 18s ease infinite;
+}
+
+/* Línea del footer con brillo y titileo */
+.footer-glow-line {
+  width: 70%;
+  height: 3px;
+  margin-bottom: 12px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.4),
+    rgba(255,255,255,1),
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  border-radius: 999px;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Pulso de blanco a azul */
+@keyframes glowPulse {
+  0% {
+    opacity: 0.4;
+    filter: blur(1px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 0.4;
+    filter: blur(1px);
+  }
+}
